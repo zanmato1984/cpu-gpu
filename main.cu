@@ -3,7 +3,7 @@
 #include "cpu.h"
 #include "gpu.cuh"
 
-constexpr size_t default_max_n = 32;
+constexpr size_t default_max_n = 128;
 constexpr size_t default_max_size = 256 * 1024 * 1024;
 
 template <size_t n, typename T>
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
   size_t size = default_max_size;
 
   if (argc == 2)
-    size = std::atol(argv[0]) * 1024 * 1024;
+    size = std::atol(argv[1]) * 1024 * 1024;
 
   cpu_gpu<int8_t>(size);
   cpu_gpu<int16_t>(size);
