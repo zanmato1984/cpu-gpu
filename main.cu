@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
   size_t size = default_max_size;
 
   if (argc == 2)
-    size = std::atol(argv[1]) * 1024 * 1024;
+    size = std::atol(argv[1]);
 
   cpu_gpu<int8_t>(size);
   cpu_gpu<int16_t>(size);
